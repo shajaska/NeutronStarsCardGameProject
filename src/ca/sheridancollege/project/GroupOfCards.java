@@ -39,6 +39,13 @@ public class GroupOfCards {
         return cards;
     }
 
+    /**
+     * @param cards the cards to set
+     */
+    public void setCards(ArrayList<Card> cards) {
+        this.cards = cards;
+    }
+
     public void shuffle() {
         Collections.shuffle(cards);
     }
