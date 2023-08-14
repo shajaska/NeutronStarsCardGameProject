@@ -48,7 +48,9 @@ public class WarCard extends Card {
     };
 
 
-    public String toString(){
-        return "temp";
+    @Override
+    public String toString() {
+        return this.value + " of " + this.suit;
     }
+
 }

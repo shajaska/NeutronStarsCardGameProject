@@ -46,4 +46,8 @@ public abstract class Player {
      */
     public abstract void play();
 
+    public Object getDeck() {
+        return null;
+    }
+
 }

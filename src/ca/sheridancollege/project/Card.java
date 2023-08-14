@@ -5,6 +5,8 @@
  */
 package ca.sheridancollege.project;
 
+import ca.sheridancollege.project.WarCard.Value;
+
 /**
  * A class to be used as the base Card class for the project. Must be general enough to be instantiated for any Card
  * game. Students wishing to add to the code should remember to add themselves as a modifier.
@@ -12,6 +14,8 @@ package ca.sheridancollege.project;
  * @author dancye
  */
 public abstract class Card {
+
+    public abstract Value getValue();
 
     //default modifier for child classes
 
