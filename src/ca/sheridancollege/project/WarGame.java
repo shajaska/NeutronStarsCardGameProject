@@ -115,6 +115,7 @@ public void startBattle() {
     WarCard card1 = player1.drawTopCard();
     WarCard card2 = player2.drawTopCard();
 
+    
     System.out.println(player1.getName() + " draws: " + card1);
     System.out.println(player2.getName() + " draws: " + card2);
     System.out.println("\n");
