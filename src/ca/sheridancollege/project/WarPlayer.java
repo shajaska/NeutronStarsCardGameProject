@@ -34,6 +34,7 @@ public class WarPlayer extends Player {
     @Override
     public void play() {
         // This can be expanded upon, but for the basic game, players simply draw and play cards.
+        //
     }
 
 }
