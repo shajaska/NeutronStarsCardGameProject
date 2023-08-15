@@ -89,7 +89,8 @@ public class WarGame extends Game {
             System.out.println(player2.getName() + " wins the war!");
         } else {
             System.out.println("The war continues!");
-            startWar();  // If it's a tie again, continue the war
+            startWar(); // If it's a tie again, continue the war
+            
         }
     }
     
