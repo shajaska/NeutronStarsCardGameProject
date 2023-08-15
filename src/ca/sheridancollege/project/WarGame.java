@@ -1,8 +1,12 @@
 package ca.sheridancollege.project;
 
+import java.util.Scanner;
+
 public class WarGame extends Game {
 
+    private GroupOfCards deck;
 
+   
     public WarGame(String name) {
         super(name);
         //TODO Auto-generated constructor stub
@@ -11,40 +15,21 @@ public class WarGame extends Game {
     
     //this method will start the game
     public void startGame() {
+        createPlayers();
+        deck = new GroupOfCards(52);
+        deck.createDeck();
 
     }
-
     
-
     @Override
     public void play() {
-        while (players.get(0).getDeck().getCards().size() > 0 && players.get(1).getDeck().getCards().size() > 0) {
-            Card player1Card = players.get(0).drawTopCard();
-            Card player2Card = players.get(1).drawTopCard();
+       startGame();
 
-            int compareResult = player1Card.getValue().compareTo(player2Card.getValue());
-
-            if (compareResult > 0) {
-                players.get(0).collectCard(player1Card, player2Card);
-            } else if (compareResult < 0) {
-                players.get(1).collectCard(player1Card, player2Card);
-            } else {
-                // War logic can be implemented here. For simplicity, we will not include the war logic in this example.
-            }
-        }
-
-        declareWinner();
     }
 
     @Override
     public void declareWinner() {
-        if (players.get(0).getDeck().getCards().size() > players.get(1).getDeck().getCards().size()) {
-            System.out.println(players.get(0).getName() + " is the winner!");
-        } else if (players.get(0).getDeck().getCards().size() < players.get(1).getDeck().getCards().size()) {
-            System.out.println(players.get(1).getName() + " is the winner!");
-        } else {
-            System.out.println("It's a tie!");
-        }
+       
     }
 
     public void displayStats() {
@@ -59,6 +44,28 @@ public class WarGame extends Game {
 
     }
 
+    public void createPlayers() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter player 1 name: ");
+        String name1 = input.nextLine();
+        System.out.println("Enter player 2 (Computer's) name: ");
+        String name2 = input.nextLine();
+        Player player1 = new WarPlayer(name1);
+        Player player2 = new WarPlayer(name2);
+        System.out.println("Player 1: " + player1.getName());
+        System.out.println("Player 2: " + player2.getName());
+
+    }
+
+    public GroupOfCards getDeck() {
+        return deck;
+    }
+
+
+    public void setDeck(GroupOfCards deck) {
+        this.deck = deck;
+    }
     
 }
 

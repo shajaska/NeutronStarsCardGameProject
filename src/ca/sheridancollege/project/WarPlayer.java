@@ -38,5 +38,6 @@ public class WarPlayer extends Player {
     public void play() {
         throw new UnsupportedOperationException("Unimplemented method 'play'");
     }
+
     
 }

@@ -31,8 +31,7 @@ public class GroupOfCards {
     public GroupOfCards(int size) {
         this.size = size;
     }
-
-    
+   
 
     public ArrayList<WarCard> getAllCards() {
         return allCards;
@@ -79,20 +78,21 @@ public class GroupOfCards {
     //create deck of cards from WarCard class of the enum values for suits and values and add to Card arraylist
     public void createDeck() {
         allCards = new ArrayList<WarCard>();
-        Set<WarCard> cardSet = new HashSet<WarCard>();
         for (Suit s : Suit.values()) {
             for (Value v : Value.values()) {
                 WarCard card = new WarCard(v, s);
-                if (!cardSet.contains(card)) {
-                    allCards.add(card);
-                    cardSet.add(card);
-                }
+                    allCards.add(card);               
             }
         }
+
+        // //print out deck of cards
+        // for (WarCard card : allCards) {
+        //     System.out.println(card);
+        // }
     }
 
     //another method to check validity of deck
-    public boolean deckValidity() {
+ /*    public boolean deckValidity() {
         Set<WarCard> cardSet = new HashSet<WarCard>();
         for (WarCard card : allCards) {
             if (!cardSet.add(card)) {
@@ -107,7 +107,7 @@ public class GroupOfCards {
         }
         return true;
     }
-    
+    */
     
 
 }//end class
