@@ -133,53 +133,44 @@ public void startBattle() {
     displayCardCount();
 }
 
-   public void startWar() {
-    System.out.println("\n IT'S A WAR! \n");
-
-    if (player1.getHand().getAllCards().size() < 4 || player2.getHand().getAllCards().size() < 4) {
-        System.out.println("One of the players doesn't have enough cards for a war! Ending the game...");
-        return;
+    public void startWar() {
+        System.out.println("It's a war!");
+    
+        if (player1.getHand().getAllCards().size() < 4 || player2.getHand().getAllCards().size() < 4) {
+            System.out.println("One of the players doesn't have enough cards for a war! Ending the game...");
+            return;
+        }
+    
+        // Each player places 3 cards face-down
+        WarCard[] warCardsP1 = new WarCard[4];
+        WarCard[] warCardsP2 = new WarCard[4];
+        for (int i = 0; i < 3; i++) {
+            warCardsP1[i] = player1.drawTopCard();
+            warCardsP2[i] = player2.drawTopCard();
+        }
+        
+        // And then one card face-up
+        warCardsP1[3] = player1.drawTopCard();
+        warCardsP2[3] = player2.drawTopCard();
+    
+        System.out.println(player1.getName() + " reveals: " + warCardsP1[3]);
+        System.out.println(player2.getName() + " reveals: " + warCardsP2[3]);
+    
+        int comparison = warCardsP1[3].getValue().compareTo(warCardsP2[3].getValue());
+        if (comparison > 0) {
+            for (WarCard card : warCardsP1) player1.collectCard(card);
+            for (WarCard card : warCardsP2) player1.collectCard(card);
+            System.out.println(player1.getName() + " wins the war!");
+        } else if (comparison < 0) {
+            for (WarCard card : warCardsP1) player2.collectCard(card);
+            for (WarCard card : warCardsP2) player2.collectCard(card);
+            System.out.println(player2.getName() + " wins the war!");
+        } else {
+            System.out.println("The war continues!");
+            startWar();  // If it's a tie again, continue the war
+        }
     }
-
-    List<WarCard> cardsInWarP1 = new ArrayList<>();
-    List<WarCard> cardsInWarP2 = new ArrayList<>();
-
-    // Each player places 3 cards face-down
-    for (int i = 0; i < 3; i++) {
-        cardsInWarP1.add(player1.drawTopCard());
-        cardsInWarP2.add(player2.drawTopCard());
-    }
-
-    // And then one card face-up
-    WarCard faceUpCardP1 = player1.drawTopCard();
-    WarCard faceUpCardP2 = player2.drawTopCard();
-    cardsInWarP1.add(faceUpCardP1);
-    cardsInWarP2.add(faceUpCardP2);
-
-    System.out.println(player1.getName() + " reveals: " + faceUpCardP1);
-    System.out.println(player2.getName() + " reveals: " + faceUpCardP2);
-
-    int comparison = faceUpCardP1.getValue().compareTo(faceUpCardP2.getValue());
-    if (comparison > 0) {
-        for (WarCard card : cardsInWarP1)
-            player1.collectCard(card);
-        for (WarCard card : cardsInWarP2)
-            player1.collectCard(card);
-        System.out.println(player1.getName() + " wins the war!");
-    } else if (comparison < 0) {
-        for (WarCard card : cardsInWarP1)
-            player2.collectCard(card);
-        for (WarCard card : cardsInWarP2)
-            player2.collectCard(card);
-        System.out.println(player2.getName() + " wins the war!");
-    } else {
-        System.out.println("The war continues!");
-        startWar(); // If it's a tie again, continue the war
-    }
-
-    displayCardCount();
-}
-
+    
 
     public void startGame() {
         createPlayers();
