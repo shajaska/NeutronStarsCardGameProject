@@ -5,39 +5,35 @@ import java.util.Collections;
 
 public class WarPlayer extends Player {
 
-    //create a field variable of object of GroupOfCards named 'hand'
     private GroupOfCards hand;
 
-    //gethand
-    public GroupOfCards gethand() {
+    public GroupOfCards getHand() {
         return hand;
     }
 
-    //setter method for hand
-    public void sethand(GroupOfCards hand) {
+    public void setHand(GroupOfCards hand) {
         this.hand = hand;
     }
 
     public WarPlayer(String name) {
         super(name);
+        this.hand = new GroupOfCards(26); // Initial size, but may grow or shrink during the game.
     }
 
-    // public Card drawTopCard() {
-    // if (hands.size() == 0) {
-    //     return null;
-    // }
-    // return hands.remove(0);
-    // }
+    public WarCard drawTopCard() {
+        if (hand.getAllCards().size() == 0) {
+            return null;
+        }
+        return hand.getAllCards().remove(0);
+    }
 
-    // public void collectCard(Card... wonCards) {
-    //     Collections.addAll(this.hands, wonCards);
-    // }
-
+    public void collectCard(WarCard... wonCards) {
+        Collections.addAll(this.hand.getAllCards(), wonCards);
+    }
 
     @Override
     public void play() {
-        throw new UnsupportedOperationException("Unimplemented method 'play'");
+        // This can be expanded upon, but for the basic game, players simply draw and play cards.
     }
 
-    
 }
