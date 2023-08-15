@@ -2,21 +2,19 @@ package ca.sheridancollege.project;
 
 public class WarGame extends Game {
 
+
     public WarGame(String name) {
         super(name);
         //TODO Auto-generated constructor stub
     }
 
-    @Override
-    public void declareWinner() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'declareWinner'");
-    }
-
+    
     //this method will start the game
     public void startGame() {
 
     }
+
+    
 
     @Override
     public void play() {
@@ -49,4 +47,18 @@ public class WarGame extends Game {
         }
     }
 
+    public void displayStats() {
+
+    }
+
+    public void startBattle() {
+
+    }
+
+    public void startWar() {
+
+    }
+
+    
 }
+

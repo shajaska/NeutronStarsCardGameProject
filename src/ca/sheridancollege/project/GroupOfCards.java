@@ -5,6 +5,7 @@
  */
 package ca.sheridancollege.project;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -23,31 +24,42 @@ import ca.sheridancollege.project.WarCard.Value;
 public class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
+    private ArrayList<WarCard> allCards;;
     private int size;//the size of the grouping
+    private ArrayList<WarCard> table;
 
     public GroupOfCards(int size) {
         this.size = size;
     }
 
-    /**
-     * A method that will get the group of cards as an ArrayList
-     *
-     * @return the group of cards.
-     */
-    public ArrayList<Card> getCards() {
-        return cards;
+    
+
+    public ArrayList<WarCard> getAllCards() {
+        return allCards;
     }
 
-    /**
-     * @param cards the cards to set
-     */
-    public void setCards(ArrayList<Card> cards) {
-        this.cards = cards;
+
+
+    public void setAllCards(ArrayList<WarCard> allCards) {
+        this.allCards = allCards;
     }
+
+
+
+    public ArrayList<WarCard> getTable() {
+        return table;
+    }
+
+
+
+    public void setTable(ArrayList<WarCard> table) {
+        this.table = table;
+    }
+
+
 
     public void shuffle() {
-        Collections.shuffle(cards);
+        Collections.shuffle(allCards);
     }
 
     /**
@@ -66,13 +78,13 @@ public class GroupOfCards {
 
     //create deck of cards from WarCard class of the enum values for suits and values and add to Card arraylist
     public void createDeck() {
-        cards = new ArrayList<Card>();
-        Set<Card> cardSet = new HashSet<Card>();
+        allCards = new ArrayList<WarCard>();
+        Set<WarCard> cardSet = new HashSet<WarCard>();
         for (Suit s : Suit.values()) {
             for (Value v : Value.values()) {
-                Card card = new WarCard(v, s);
+                WarCard card = new WarCard(v, s);
                 if (!cardSet.contains(card)) {
-                    cards.add(card);
+                    allCards.add(card);
                     cardSet.add(card);
                 }
             }
@@ -81,12 +93,13 @@ public class GroupOfCards {
 
     //another method to check validity of deck
     public boolean deckValidity() {
-        Set<Card> cardSet = new HashSet<Card>();
-        for (Card card : cards) {
+        Set<WarCard> cardSet = new HashSet<WarCard>();
+        for (WarCard card : allCards) {
             if (!cardSet.add(card)) {
                 // card already exists in the set, so the deck is invalid
                 return false;
             }
+
             if (((WarCard) card).getSuit() == null ||((WarCard) card).getValue() == null) {
                 // card has an invalid suit or rank, so the deck is invalid
                 return false;
