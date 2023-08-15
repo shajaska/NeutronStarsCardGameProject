@@ -145,8 +145,8 @@ public void startBattle() {
         WarCard[] warCardsP1 = new WarCard[4];
         WarCard[] warCardsP2 = new WarCard[4];
         for (int i = 0; i < 3; i++) {
-            warCardsP1[i] = player1.drawTopCard();
-            warCardsP2[i] = player2.drawTopCard();
+            warCardsP1[i] = player1.play();;
+            warCardsP2[i] = player2.play();
         }
         
         // And then one card face-up
