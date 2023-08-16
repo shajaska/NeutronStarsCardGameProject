@@ -6,6 +6,9 @@ import java.util.Collections;
 /**
  * The GroupOfCards class represents a group of cards in a card game.
  * It contains methods for shuffling the cards, getting the size of the group, and creating a new deck of cards.
+ * @author Divya Luther
+ * @modifier Jaskaran Sharma Punj, Manjinder Singh, Kirandeep Kaur
+ * 
  */
 public class GroupOfCards {
 

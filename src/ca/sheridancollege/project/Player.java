@@ -10,7 +10,7 @@ package ca.sheridancollege.project;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
- * @modifier: Manjinder Singh
+ * @modifier: Manjinder Singh, Jaskaran Sharma Punj, Divya Luther
  */
 public abstract class Player {
 

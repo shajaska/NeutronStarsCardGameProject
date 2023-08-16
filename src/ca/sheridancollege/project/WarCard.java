@@ -5,7 +5,9 @@ package ca.sheridancollege.project;
  * It is a subclass of the Card class.
  * It contains two enums, one for the value of the card and one for the suit.
  * It also contains a toString method that returns the value and suit of the card.
- * */
+ * @author Manjinder Singh
+ * @modifier Jaskaran Sharma Punj, Kirandeep Kaur, Divya Luther
+ **/
 
 public class WarCard extends Card {
 

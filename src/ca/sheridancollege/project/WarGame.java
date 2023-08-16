@@ -9,6 +9,8 @@ import java.util.Scanner;
  * It extends the Game class and overrides the play() and declareWinner() methods.
  * It contains methods for starting the game, distributing cards, creating players, and starting a battle or war.
  * It also contains utility methods for prompting the user to continue, displaying card counts, and checking if the game is over.
+ * @author Jaskaran Sharma Punj
+ * @modifier Manjinder Singh, Divya Luther, Kirandeep Kaur
  */
 public class WarGame extends Game {
 

@@ -1,6 +1,6 @@
 package ca.sheridancollege.project;
-/*
- * @Author Jaskaran Sharma Punj
+/**
+ * @author Jaskaran Sharma Punj
  */
 public class Main {
     /**

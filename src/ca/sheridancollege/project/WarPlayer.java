@@ -6,6 +6,8 @@ import java.util.Collections;
 /**
  * The WarPlayer class represents a player in the game of War.
  * Each player has a hand of cards, which can be drawn from and added to during the game.
+ * @author Kirandeep Kaur
+ * @modifier Divya Luther, Manjinder Singh, Jaskaran Sharma Punj
  */
 public class WarPlayer extends Player {
 
