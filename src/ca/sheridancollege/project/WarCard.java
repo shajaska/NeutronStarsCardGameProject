@@ -1,5 +1,12 @@
 package ca.sheridancollege.project;
 
+/**
+ * This class models a card in a standard deck of 52 playing cards.
+ * It is a subclass of the Card class.
+ * It contains two enums, one for the value of the card and one for the suit.
+ * It also contains a toString method that returns the value and suit of the card.
+ * */
+
 public class WarCard extends Card {
     
     private Value value;

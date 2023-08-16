@@ -10,6 +10,7 @@ package ca.sheridancollege.project;
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @modifier: Manjinder Singh
  */
 public abstract class Player {
 
@@ -45,7 +46,4 @@ public abstract class Player {
      * with logic to play your game.
      */
     public abstract Card play();
-
-    
-
 }
