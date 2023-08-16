@@ -12,9 +12,14 @@ import ca.sheridancollege.project.WarCard.Value;
  * game. Students wishing to add to the code should remember to add themselves as a modifier.
  *
  * @author dancye
+ * @modified Jaskaran Sharma Punj
  */
 public abstract class Card {
 
+    /**
+     * abstract getter method for the value of the card
+     * @return
+     */
     public abstract Value getValue();
 
     //default modifier for child classes
